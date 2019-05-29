@@ -11,3 +11,6 @@ Retrieved from the NYC Open Data website, filtered by roadway type - filtered to
 This document contains the traffic volume data from NYC Open Data, summed over time of day, as well as travel direction (i.e. eastbound vs. westbound), and averaged over the days that traffic volume was observed on that roadway, if applicable. 
 
 
+## crash_traffic_join.csv
+
+Joined crash data and traffic flow data by segmentID, preserving all rows - ie. rows where there was no entry for traffic flow, but entries for crashes, or vice versa. 
