@@ -1,0 +1,25 @@
+---
+title: "node_indicator"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r}
+library(dplyr)
+library(rgdal)
+nodes <- readOGR("/Users/rgalowich/Desktop/PC - Shared/CEE 345","LION_projected_nodes")
+slow_zones <- readOGR("/Users/rgalowich/Dropbox (MIT)/Stanford/18-19/Spring/CEE 345/Final Project/VZV_Neighborhood Slow Zones","slow_zones")
+```
+
+```{r}
+proj4string(nodes) <- "+proj=longlat +datum=WGS84 +no_defs +ellps=WGS84 +towgs84=0,0,0"
+proj4string(slow_zones) <- "+proj=longlat +datum=WGS84 +no_defs +ellps=WGS84 +towgs84=0,0,0"
+
+node_to_zone_join <- over(nodes,slow_zones) %>% cbind(nodes@data) %>% select(c(NODEID,name,year))
+node_to_zone_join$zone_ind <- ifelse(!is.na(node_to_zone_join$name), 1, 0)
+write.csv(node_to_zone_join, file = "node_slow_zone_indicators.csv")
+```
+
