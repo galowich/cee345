@@ -4,18 +4,23 @@ library(sp)
 library(fuzzyjoin)
 library(rgdal)
 library(raster)
+library(tidyverse)
 
 revgeo <- read_csv(file = "GitHub/cee345/revgeocoded.csv") %>% 
   rename(lat = LATITUDE, long = LONGITUDE, street = `ON STREET NAME`) %>%
-  mutate(number = str_extract(add, "\\d+")) %>% filter(BOROUGH == "BRONX")
+  mutate(number = str_extract(add, "\\d+")) %>% filter(BOROUGH == "BRONX") %>% 
+  group_by(lat, long) %>% 
+  summarise(
+    n_person = sum(`NUMBER OF PERSONS INJURED`),
+    n_ped = sum(`NUMBER OF PEDESTRIANS INJURED`)) %>% 
+  ungroup()
 
-View(revgeo)
-lion_st <- read_csv(file = "GitHub/cee345/LION_Street_Data.csv") %>%
-  rename(start = FromRight, end = ToRight)
+lion_st <- read_csv(file = "GitHub/cee345/LION_bronx_only.csv") %>%
+  rename(long = LongFrom, lat = LatFrom) 
+  
 
 
 
-left_join(revgeo, lion_st, by = c("street" = "Street")) %>% 
-fuzzy_left_join(lion_st, 
-                by=c("number"="start", "number"="end"),
+fuzzy_left_join(revgeo, lion_st, 
+                by=c("lat"="lat", "long"="long"),
                 match_fun=list(`>=`, `<=`))
