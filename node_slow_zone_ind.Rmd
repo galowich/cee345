@@ -1,5 +1,5 @@
 ---
-title: "node_indicator"
+title: "node_indicator & modularity calculation"
 output: html_document
 ---
 
@@ -8,18 +8,29 @@ knitr::opts_chunk$set(echo = TRUE)
 ```
 
 ```{r}
-library(dplyr)
+
+#"+proj=longlat +datum=WGS84 +no_defs +ellps=WGS84 +towgs84=0,0,0"
+
+library(tidyverse)
 library(rgdal)
-nodes <- readOGR("/Users/rgalowich/Desktop/PC - Shared/CEE 345","LION_projected_nodes")
-slow_zones <- readOGR("/Users/rgalowich/Dropbox (MIT)/Stanford/18-19/Spring/CEE 345/Final Project/VZV_Neighborhood Slow Zones","slow_zones")
+library(sf)
+library(sp)
+library(igraph)
+
+
+
+nodes <- st_read("~/lion_projected nodes/","LION_projected_nodes") %>% 
+  st_transform(nodes, crs = "+proj=longlat") 
+slow_zones <- st_read("~/VZV_Neighborhood Slow Zones/","slow_zones") %>% 
+  st_transform(nodes, crs = "+proj=longlat")
+
+
+nodes <- nodes %>% mutate(in_slow_zone = lengths(st_within(nodes, slow_zones))) 
+
+
+write.csv(nodes, file = "node_slow_zone_indicators.csv")
+
 ```
 
-```{r}
-proj4string(nodes) <- "+proj=longlat +datum=WGS84 +no_defs +ellps=WGS84 +towgs84=0,0,0"
-proj4string(slow_zones) <- "+proj=longlat +datum=WGS84 +no_defs +ellps=WGS84 +towgs84=0,0,0"
 
-node_to_zone_join <- over(nodes,slow_zones) %>% cbind(nodes@data) %>% select(c(NODEID,name,year)) 
-node_to_zone_join$zone_ind <- ifelse(!is.na(node_to_zone_join$name), 1, 0)
-write.csv(node_to_zone_join, file = "node_slow_zone_indicators.csv")
-```
 
