@@ -17,19 +17,16 @@ library(sf)
 library(sp)
 library(igraph)
 
-
-
 nodes <- st_read("~/lion_projected nodes/","LION_projected_nodes") %>% 
   st_transform(nodes, crs = "+proj=longlat") 
 slow_zones <- st_read("~/VZV_Neighborhood Slow Zones/","slow_zones") %>% 
   st_transform(nodes, crs = "+proj=longlat")
 
 
-nodes <- nodes %>% mutate(in_slow_zone = lengths(st_within(nodes, slow_zones))) 
+nodes <- nodes %>% mutate(in_slow_zone = lengths(st_within(nodes, slow_zones)))  
 
 
 write.csv(nodes, file = "node_slow_zone_indicators.csv")
-
 ```
 
 
