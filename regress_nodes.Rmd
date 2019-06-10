@@ -1,0 +1,87 @@
+---
+title: "Fitting a model to node analysis "
+output: html_notebook
+---
+
+```{r}
+library(tidyverse)
+library(igraph)
+library(sf)
+library(leaflet)
+
+nodes <- read_csv(file = "node_csv_for_regression.csv") %>% 
+  rename("nodeID" = "X1")
+
+ped_nodes <- nodes %>% arrange(desc(ped_injured)) %>% filter(ped_injured >= 6)  %>% select(nodeID)
+persons_nodes <- nodes %>% arrange(desc(persons_injured)) %>% filter(persons_injured > 20)  %>% select(nodeID)
+
+setdiff(ped_nodes, persons_nodes)
+
+
+fit <- glm(persons_injured ~ slow_zone_indicator, data = nodes)
+fit2 <- glm(persons_injured ~ slow_zone_indicator + bc_centrality, data = nodes)
+fit3 <- glm(ped_injured ~ slow_zone_indicator, data = nodes)
+fit4 <- glm(ped_injured ~ slow_zone_indicator + bc_centrality, data = nodes)
+
+
+fit
+fit2
+fit3
+fit4
+
+```
+
+
+Attempt to plot the most common nodes for pedestrians
+```{r}
+
+ped_nodes <- unlist(flatten(ped_nodes))
+persons_nodes <- unlist(flatten(persons_nodes))
+
+
+
+bx_nodes <- st_read("~/lion_projected nodes/","LION_projected_nodes") %>% 
+  st_transform(nodes,crs = "+init=epsg:4326 +proj=longlat +datum=WGS84 +no_defs +ellps=WGS84 +towgs84=0,0,0 ") 
+
+ped_bx <- bx_nodes %>% filter(NODEID %in% ped_nodes)
+
+ppl_bx <- bx_nodes %>% filter(NODEID %in% persons_nodes)
+
+bronx <- read.csv(file = "LION_bronx_only.csv")
+df <- bronx[16:19]
+
+st_segment = function(r){
+  st_linestring(t(matrix(unlist(r), 2, 2)))
+}
+
+
+bronx$geom <- st_sfc(sapply(1:nrow(df), 
+    function(i){st_segment(df[i,])},simplify=FALSE))
+
+
+bronx <- st_sf(bronx, crs = "+init=epsg:4326 +proj=longlat +datum=WGS84 +no_defs +ellps=WGS84 +towgs84=0,0,0")
+
+
+## LEAFLET PLOT 
+leaflet() %>% 
+  addTiles() %>% 
+  addCircleMarkers(
+    color = "blue",
+    radius = 4,
+    weight = 4,
+    data = ped_bx
+  ) %>%
+  addCircleMarkers(
+    radius = 4,
+    color = "black",
+    weight = 4,
+    labelOptions = labelOptions(noHide = TRUE, textOnly = TRUE),
+    data = ppl_bx
+  )
+
+
+
+
+```
+
+
