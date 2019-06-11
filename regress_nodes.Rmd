@@ -8,9 +8,10 @@ library(tidyverse)
 library(igraph)
 library(sf)
 library(leaflet)
+library(stargazer)
 
 nodes <- read_csv(file = "node_csv_for_regression.csv") %>% 
-  rename("nodeID" = "X1")
+  rename("nodeID" = "X1") 
 
 ped_nodes <- nodes %>% arrange(desc(ped_injured)) %>% filter(ped_injured >= 6)  %>% select(nodeID)
 persons_nodes <- nodes %>% arrange(desc(persons_injured)) %>% filter(persons_injured > 20)  %>% select(nodeID)
@@ -28,6 +29,14 @@ fit
 fit2
 fit3
 fit4
+
+
+stargazer(fit, fit2,fit3,fit4, 
+          out = "network_fit.html", 
+          no.space = TRUE,
+          column.labels = c("All Injuries", "All Injuries - centrality","Pedestrians","Pedestrians - centrality"))
+
+
 
 ```
 

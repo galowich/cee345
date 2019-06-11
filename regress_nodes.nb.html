@@ -241,21 +241,50 @@ $(document).ready(function () {
 <!-- rnb-text-begin -->
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuZml0XG5cbmBgYCJ9 -->
-<pre class="r"><code>fit
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuc3RhcmdhemVyKGZpdCwgZml0MixmaXQzLGZpdDQsIFxuICAgICAgICAgIG91dCA9IFwibmV0d29ya19maXQuaHRtbFwiLCBcbiAgICAgICAgICBuby5zcGFjZSA9IFRSVUUsXG4gICAgICAgICAgY29sdW1uLmxhYmVscyA9IGMoXCJBbGwgSW5qdXJpZXNcIiwgXCJBbGwgSW5qdXJpZXMgLSBjZW50cmFsaXR5XCIsXCJQZWRlc3RyaWFuc1wiLFwiUGVkZXN0cmlhbnMgLSBjZW50cmFsaXR5XCIpKVxuXG5gYGAifQ== -->
+<pre class="r"><code>stargazer(fit, fit2,fit3,fit4, 
+          out = &quot;network_fit.html&quot;, 
+          no.space = TRUE,
+          column.labels = c(&quot;All Injuries&quot;, &quot;All Injuries - centrality&quot;,&quot;Pedestrians&quot;,&quot;Pedestrians - centrality&quot;))
 </code></pre>
 <!-- rnb-source-end -->
-<!-- rnb-output-begin eyJkYXRhIjoiXG5DYWxsOiAgZ2xtKGZvcm11bGEgPSBwZXJzb25zX2luanVyZWQgfiBzbG93X3pvbmVfaW5kaWNhdG9yLCBkYXRhID0gbm9kZXMpXG5cbkNvZWZmaWNpZW50czpcbiAgICAgICAgKEludGVyY2VwdCkgIHNsb3dfem9uZV9pbmRpY2F0b3IgIFxuICAgICAgICAgICAgIDAuNTcwMyAgICAgICAgICAgICAgLTAuMTM3MSAgXG5cbkRlZ3JlZXMgb2YgRnJlZWRvbTogMTk0NjUgVG90YWwgKGkuZS4gTnVsbCk7ICAxOTQ2NCBSZXNpZHVhbFxuTnVsbCBEZXZpYW5jZTpcdCAgICA2ODA5MCBcblJlc2lkdWFsIERldmlhbmNlOiA2ODA3MCBcdEFJQzogNzk2MjBcbiJ9 -->
+<!-- rnb-output-begin eyJkYXRhIjoibGVuZ3RoIG9mIE5VTEwgY2Fubm90IGJlIGNoYW5nZWRsZW5ndGggb2YgTlVMTCBjYW5ub3QgYmUgY2hhbmdlZGxlbmd0aCBvZiBOVUxMIGNhbm5vdCBiZSBjaGFuZ2VkbGVuZ3RoIG9mIE5VTEwgY2Fubm90IGJlIGNoYW5nZWRsZW5ndGggb2YgTlVMTCBjYW5ub3QgYmUgY2hhbmdlZG51bWJlciBvZiByb3dzIG9mIHJlc3VsdCBpcyBub3QgYSBtdWx0aXBsZSBvZiB2ZWN0b3IgbGVuZ3RoIChhcmcgMiludW1iZXIgb2Ygcm93cyBvZiByZXN1bHQgaXMgbm90IGEgbXVsdGlwbGUgb2YgdmVjdG9yIGxlbmd0aCAoYXJnIDIpXG4ifQ== -->
+<pre><code>length of NULL cannot be changedlength of NULL cannot be changedlength of NULL cannot be changedlength of NULL cannot be changedlength of NULL cannot be changednumber of rows of result is not a multiple of vector length (arg 2)number of rows of result is not a multiple of vector length (arg 2)</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiXG4lIFRhYmxlIGNyZWF0ZWQgYnkgc3RhcmdhemVyIHYuNS4yLjIgYnkgTWFyZWsgSGxhdmFjLCBIYXJ2YXJkIFVuaXZlcnNpdHkuIEUtbWFpbDogaGxhdmFjIGF0IGZhcy5oYXJ2YXJkLmVkdVxuJSBEYXRlIGFuZCB0aW1lOiBNb24sIEp1biAxMCwgMjAxOSAtIDE4OjE4OjQ3XG5cXGJlZ2lue3RhYmxlfVshaHRicF0gXFxjZW50ZXJpbmcgXG4gIFxcY2FwdGlvbnt9IFxuICBcXGxhYmVse30gXG5cXGJlZ2lue3RhYnVsYXJ9e0B7XFxleHRyYWNvbHNlcHs1cHR9fWxjY2NjfSBcblxcXFxbLTEuOGV4XVxcaGxpbmUgXG5cXGhsaW5lIFxcXFxbLTEuOGV4XSBcbiAmIFxcbXVsdGljb2x1bW57NH17Y317XFx0ZXh0aXR7RGVwZW5kZW50IHZhcmlhYmxlOn19IFxcXFwgXG5cXGNsaW5lezItNX0gXG5cXFxcWy0xLjhleF0gJiBcXG11bHRpY29sdW1uezJ9e2N9e3BlcnNvbnNcXF9pbmp1cmVkfSAmIFxcbXVsdGljb2x1bW57Mn17Y317cGVkXFxfaW5qdXJlZH0gXFxcXCBcbiAmIEFsbCBJbmp1cmllcyAmIEFsbCBJbmp1cmllcyAtIGNlbnRyYWxpdHkgJiBQZWRlc3RyaWFucyAmIFBlZGVzdHJpYW5zIC0gY2VudHJhbGl0eSBcXFxcIFxuXFxcXFstMS44ZXhdICYgKDEpICYgKDIpICYgKDMpICYgKDQpXFxcXCBcblxcaGxpbmUgXFxcXFstMS44ZXhdIFxuIHNsb3dcXF96b25lXFxfaW5kaWNhdG9yICYgJC0kMC4xMzckXnsqKn0kICYgJC0kMC4xMTgkXnsqfSQgJiAwLjAyMSAmIDAuMDI1IFxcXFwgXG4gICYgKDAuMDY3KSAmICgwLjA2NykgJiAoMC4wMTgpICYgKDAuMDE4KSBcXFxcIFxuICBiY1xcX2NlbnRyYWxpdHkgJiAgJiAxNC4xMjckXnsqKip9JCAmICAmIDMuMTc5JF57KioqfSQgXFxcXCBcbiAgJiAgJiAoMS4yNjEpICYgICYgKDAuMzQ3KSBcXFxcIFxuICBDb25zdGFudCAmIDAuNTcwJF57KioqfSQgJiAwLjUyNSReeyoqKn0kICYgMC4xMjckXnsqKip9JCAmIDAuMTE3JF57KioqfSQgXFxcXCBcbiAgJiAoMC4wMTQpICYgKDAuMDE0KSAmICgwLjAwNCkgJiAoMC4wMDQpIFxcXFwgXG4gXFxobGluZSBcXFxcWy0xLjhleF0gXG5PYnNlcnZhdGlvbnMgJiAxOSw0NjYgJiAxOSw0NjYgJiAxOSw0NjYgJiAxOSw0NjYgXFxcXCBcbkxvZyBMaWtlbGlob29kICYgJC0kMzksODA3LjE2MCAmICQtJDM5LDc0NC41NjAgJiAkLSQxNCw2ODkuOTgwICYgJC0kMTQsNjQ4LjE2MCBcXFxcIFxuQWthaWtlIEluZi4gQ3JpdC4gJiA3OSw2MTguMzMwICYgNzksNDk1LjExMCAmIDI5LDM4My45NzAgJiAyOSwzMDIuMzMwIFxcXFwgXG5cXGhsaW5lIFxuXFxobGluZSBcXFxcWy0xLjhleF0gXG5cXHRleHRpdHtOb3RlOn0gICYgXFxtdWx0aWNvbHVtbns0fXtyfXskXnsqfSRwJDwkMC4xOyAkXnsqKn0kcCQ8JDAuMDU7ICReeyoqKn0kcCQ8JDAuMDF9IFxcXFwgXG5cXGVuZHt0YWJ1bGFyfSBcblxcZW5ke3RhYmxlfSBcbiJ9 -->
 <pre><code>
-Call:  glm(formula = persons_injured ~ slow_zone_indicator, data = nodes)
-
-Coefficients:
-        (Intercept)  slow_zone_indicator  
-             0.5703              -0.1371  
-
-Degrees of Freedom: 19465 Total (i.e. Null);  19464 Residual
-Null Deviance:      68090 
-Residual Deviance: 68070    AIC: 79620</code></pre>
+% Table created by stargazer v.5.2.2 by Marek Hlavac, Harvard University. E-mail: hlavac at fas.harvard.edu
+% Date and time: Mon, Jun 10, 2019 - 18:18:47
+\begin{table}[!htbp] \centering 
+  \caption{} 
+  \label{} 
+\begin{tabular}{@{\extracolsep{5pt}}lcccc} 
+\\[-1.8ex]\hline 
+\hline \\[-1.8ex] 
+ &amp; \multicolumn{4}{c}{\textit{Dependent variable:}} \\ 
+\cline{2-5} 
+\\[-1.8ex] &amp; \multicolumn{2}{c}{persons\_injured} &amp; \multicolumn{2}{c}{ped\_injured} \\ 
+ &amp; All Injuries &amp; All Injuries - centrality &amp; Pedestrians &amp; Pedestrians - centrality \\ 
+\\[-1.8ex] &amp; (1) &amp; (2) &amp; (3) &amp; (4)\\ 
+\hline \\[-1.8ex] 
+ slow\_zone\_indicator &amp; $-$0.137$^{**}$ &amp; $-$0.118$^{*}$ &amp; 0.021 &amp; 0.025 \\ 
+  &amp; (0.067) &amp; (0.067) &amp; (0.018) &amp; (0.018) \\ 
+  bc\_centrality &amp;  &amp; 14.127$^{***}$ &amp;  &amp; 3.179$^{***}$ \\ 
+  &amp;  &amp; (1.261) &amp;  &amp; (0.347) \\ 
+  Constant &amp; 0.570$^{***}$ &amp; 0.525$^{***}$ &amp; 0.127$^{***}$ &amp; 0.117$^{***}$ \\ 
+  &amp; (0.014) &amp; (0.014) &amp; (0.004) &amp; (0.004) \\ 
+ \hline \\[-1.8ex] 
+Observations &amp; 19,466 &amp; 19,466 &amp; 19,466 &amp; 19,466 \\ 
+Log Likelihood &amp; $-$39,807.160 &amp; $-$39,744.560 &amp; $-$14,689.980 &amp; $-$14,648.160 \\ 
+Akaike Inf. Crit. &amp; 79,618.330 &amp; 79,495.110 &amp; 29,383.970 &amp; 29,302.330 \\ 
+\hline 
+\hline \\[-1.8ex] 
+\textit{Note:}  &amp; \multicolumn{4}{r}{$^{*}$p$&lt;$0.1; $^{**}$p$&lt;$0.05; $^{***}$p$&lt;$0.01} \\ 
+\end{tabular} 
+\end{table} </code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-output-begin eyJkYXRhIjoibGVuZ3RoIG9mIE5VTEwgY2Fubm90IGJlIGNoYW5nZWRsZW5ndGggb2YgTlVMTCBjYW5ub3QgYmUgY2hhbmdlZGxlbmd0aCBvZiBOVUxMIGNhbm5vdCBiZSBjaGFuZ2VkbGVuZ3RoIG9mIE5VTEwgY2Fubm90IGJlIGNoYW5nZWRsZW5ndGggb2YgTlVMTCBjYW5ub3QgYmUgY2hhbmdlZG51bWJlciBvZiByb3dzIG9mIHJlc3VsdCBpcyBub3QgYSBtdWx0aXBsZSBvZiB2ZWN0b3IgbGVuZ3RoIChhcmcgMiludW1iZXIgb2Ygcm93cyBvZiByZXN1bHQgaXMgbm90IGEgbXVsdGlwbGUgb2YgdmVjdG9yIGxlbmd0aCAoYXJnIDIpXG4ifQ== -->
+<pre><code>length of NULL cannot be changedlength of NULL cannot be changedlength of NULL cannot be changedlength of NULL cannot be changedlength of NULL cannot be changednumber of rows of result is not a multiple of vector length (arg 2)number of rows of result is not a multiple of vector length (arg 2)</code></pre>
 <!-- rnb-output-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
@@ -274,7 +303,7 @@ Residual Deviance: 68070    AIC: 79620</code></pre>
 <!-- rnb-text-begin -->
 <!-- rnb-text-end -->
 
-<div id="rmd-source-code">LS0tCnRpdGxlOiAiRml0dGluZyBhIG1vZGVsIHRvIG5vZGUgYW5hbHlzaXMgIgpvdXRwdXQ6IGh0bWxfbm90ZWJvb2sKLS0tCgpgYGB7cn0KbGlicmFyeSh0aWR5dmVyc2UpCmxpYnJhcnkoaWdyYXBoKQpsaWJyYXJ5KHNmKQpsaWJyYXJ5KGxlYWZsZXQpCgpub2RlcyA8LSByZWFkX2NzdihmaWxlID0gIm5vZGVfY3N2X2Zvcl9yZWdyZXNzaW9uLmNzdiIpICU+JSAKICByZW5hbWUoIm5vZGVJRCIgPSAiWDEiKQoKcGVkX25vZGVzIDwtIG5vZGVzICU+JSBhcnJhbmdlKGRlc2MocGVkX2luanVyZWQpKSAlPiUgZmlsdGVyKHBlZF9pbmp1cmVkID49IDYpICAlPiUgc2VsZWN0KG5vZGVJRCkKcGVyc29uc19ub2RlcyA8LSBub2RlcyAlPiUgYXJyYW5nZShkZXNjKHBlcnNvbnNfaW5qdXJlZCkpICU+JSBmaWx0ZXIocGVyc29uc19pbmp1cmVkID4gMjApICAlPiUgc2VsZWN0KG5vZGVJRCkKCnNldGRpZmYocGVkX25vZGVzLCBwZXJzb25zX25vZGVzKQoKCmZpdCA8LSBnbG0ocGVyc29uc19pbmp1cmVkIH4gc2xvd196b25lX2luZGljYXRvciwgZGF0YSA9IG5vZGVzKQpmaXQyIDwtIGdsbShwZXJzb25zX2luanVyZWQgfiBzbG93X3pvbmVfaW5kaWNhdG9yICsgYmNfY2VudHJhbGl0eSwgZGF0YSA9IG5vZGVzKQpmaXQzIDwtIGdsbShwZWRfaW5qdXJlZCB+IHNsb3dfem9uZV9pbmRpY2F0b3IsIGRhdGEgPSBub2RlcykKZml0NCA8LSBnbG0ocGVkX2luanVyZWQgfiBzbG93X3pvbmVfaW5kaWNhdG9yICsgYmNfY2VudHJhbGl0eSwgZGF0YSA9IG5vZGVzKQoKCmZpdApmaXQyCmZpdDMKZml0NAoKYGBgCgoKQXR0ZW1wdCB0byBwbG90IHRoZSBtb3N0IGNvbW1vbiBub2RlcyBmb3IgcGVkZXN0cmlhbnMKYGBge3J9CgpwZWRfbm9kZXMgPC0gdW5saXN0KGZsYXR0ZW4ocGVkX25vZGVzKSkKcGVyc29uc19ub2RlcyA8LSB1bmxpc3QoZmxhdHRlbihwZXJzb25zX25vZGVzKSkKCgoKYnhfbm9kZXMgPC0gc3RfcmVhZCgifi9saW9uX3Byb2plY3RlZCBub2Rlcy8iLCJMSU9OX3Byb2plY3RlZF9ub2RlcyIpICU+JSAKICBzdF90cmFuc2Zvcm0obm9kZXMsY3JzID0gIitpbml0PWVwc2c6NDMyNiArcHJvaj1sb25nbGF0ICtkYXR1bT1XR1M4NCArbm9fZGVmcyArZWxscHM9V0dTODQgK3Rvd2dzODQ9MCwwLDAgIikgCgpwZWRfYnggPC0gYnhfbm9kZXMgJT4lIGZpbHRlcihOT0RFSUQgJWluJSBwZWRfbm9kZXMpCgpwcGxfYnggPC0gYnhfbm9kZXMgJT4lIGZpbHRlcihOT0RFSUQgJWluJSBwZXJzb25zX25vZGVzKQoKYnJvbnggPC0gcmVhZC5jc3YoZmlsZSA9ICJMSU9OX2Jyb254X29ubHkuY3N2IikKZGYgPC0gYnJvbnhbMTY6MTldCgpzdF9zZWdtZW50ID0gZnVuY3Rpb24ocil7CiAgc3RfbGluZXN0cmluZyh0KG1hdHJpeCh1bmxpc3QociksIDIsIDIpKSkKfQoKCmJyb254JGdlb20gPC0gc3Rfc2ZjKHNhcHBseSgxOm5yb3coZGYpLCAKICAgIGZ1bmN0aW9uKGkpe3N0X3NlZ21lbnQoZGZbaSxdKX0sc2ltcGxpZnk9RkFMU0UpKQoKCmJyb254IDwtIHN0X3NmKGJyb254LCBjcnMgPSAiK2luaXQ9ZXBzZzo0MzI2ICtwcm9qPWxvbmdsYXQgK2RhdHVtPVdHUzg0ICtub19kZWZzICtlbGxwcz1XR1M4NCArdG93Z3M4ND0wLDAsMCIpCgoKIyMgTEVBRkxFVCBQTE9UIApsZWFmbGV0KCkgJT4lIAogIGFkZFRpbGVzKCkgJT4lIAogIGFkZENpcmNsZU1hcmtlcnMoCiAgICBjb2xvciA9ICJibHVlIiwKICAgIHJhZGl1cyA9IDQsCiAgICB3ZWlnaHQgPSA0LAogICAgZGF0YSA9IHBlZF9ieAogICkgJT4lCiAgYWRkQ2lyY2xlTWFya2VycygKICAgIHJhZGl1cyA9IDQsCiAgICBjb2xvciA9ICJibGFjayIsCiAgICB3ZWlnaHQgPSA0LAogICAgbGFiZWxPcHRpb25zID0gbGFiZWxPcHRpb25zKG5vSGlkZSA9IFRSVUUsIHRleHRPbmx5ID0gVFJVRSksCiAgICBkYXRhID0gcHBsX2J4CiAgKQoKCgoKYGBgCgoK</div>
+<div id="rmd-source-code">LS0tCnRpdGxlOiAiRml0dGluZyBhIG1vZGVsIHRvIG5vZGUgYW5hbHlzaXMgIgpvdXRwdXQ6IGh0bWxfbm90ZWJvb2sKLS0tCgpgYGB7cn0KbGlicmFyeSh0aWR5dmVyc2UpCmxpYnJhcnkoaWdyYXBoKQpsaWJyYXJ5KHNmKQpsaWJyYXJ5KGxlYWZsZXQpCmxpYnJhcnkoc3RhcmdhemVyKQoKbm9kZXMgPC0gcmVhZF9jc3YoZmlsZSA9ICJub2RlX2Nzdl9mb3JfcmVncmVzc2lvbi5jc3YiKSAlPiUgCiAgcmVuYW1lKCJub2RlSUQiID0gIlgxIikgCgpwZWRfbm9kZXMgPC0gbm9kZXMgJT4lIGFycmFuZ2UoZGVzYyhwZWRfaW5qdXJlZCkpICU+JSBmaWx0ZXIocGVkX2luanVyZWQgPj0gNikgICU+JSBzZWxlY3Qobm9kZUlEKQpwZXJzb25zX25vZGVzIDwtIG5vZGVzICU+JSBhcnJhbmdlKGRlc2MocGVyc29uc19pbmp1cmVkKSkgJT4lIGZpbHRlcihwZXJzb25zX2luanVyZWQgPiAyMCkgICU+JSBzZWxlY3Qobm9kZUlEKQoKc2V0ZGlmZihwZWRfbm9kZXMsIHBlcnNvbnNfbm9kZXMpCgoKZml0IDwtIGdsbShwZXJzb25zX2luanVyZWQgfiBzbG93X3pvbmVfaW5kaWNhdG9yLCBkYXRhID0gbm9kZXMpCmZpdDIgPC0gZ2xtKHBlcnNvbnNfaW5qdXJlZCB+IHNsb3dfem9uZV9pbmRpY2F0b3IgKyBiY19jZW50cmFsaXR5LCBkYXRhID0gbm9kZXMpCmZpdDMgPC0gZ2xtKHBlZF9pbmp1cmVkIH4gc2xvd196b25lX2luZGljYXRvciwgZGF0YSA9IG5vZGVzKQpmaXQ0IDwtIGdsbShwZWRfaW5qdXJlZCB+IHNsb3dfem9uZV9pbmRpY2F0b3IgKyBiY19jZW50cmFsaXR5LCBkYXRhID0gbm9kZXMpCgoKZml0CmZpdDIKZml0MwpmaXQ0CgoKc3RhcmdhemVyKGZpdCwgZml0MixmaXQzLGZpdDQsIAogICAgICAgICAgb3V0ID0gIm5ldHdvcmtfZml0Lmh0bWwiLCAKICAgICAgICAgIG5vLnNwYWNlID0gVFJVRSwKICAgICAgICAgIGNvbHVtbi5sYWJlbHMgPSBjKCJBbGwgSW5qdXJpZXMiLCAiQWxsIEluanVyaWVzIC0gY2VudHJhbGl0eSIsIlBlZGVzdHJpYW5zIiwiUGVkZXN0cmlhbnMgLSBjZW50cmFsaXR5IikpCgoKCmBgYAoKCkF0dGVtcHQgdG8gcGxvdCB0aGUgbW9zdCBjb21tb24gbm9kZXMgZm9yIHBlZGVzdHJpYW5zCmBgYHtyfQoKcGVkX25vZGVzIDwtIHVubGlzdChmbGF0dGVuKHBlZF9ub2RlcykpCnBlcnNvbnNfbm9kZXMgPC0gdW5saXN0KGZsYXR0ZW4ocGVyc29uc19ub2RlcykpCgoKCmJ4X25vZGVzIDwtIHN0X3JlYWQoIn4vbGlvbl9wcm9qZWN0ZWQgbm9kZXMvIiwiTElPTl9wcm9qZWN0ZWRfbm9kZXMiKSAlPiUgCiAgc3RfdHJhbnNmb3JtKG5vZGVzLGNycyA9ICIraW5pdD1lcHNnOjQzMjYgK3Byb2o9bG9uZ2xhdCArZGF0dW09V0dTODQgK25vX2RlZnMgK2VsbHBzPVdHUzg0ICt0b3dnczg0PTAsMCwwICIpIAoKcGVkX2J4IDwtIGJ4X25vZGVzICU+JSBmaWx0ZXIoTk9ERUlEICVpbiUgcGVkX25vZGVzKQoKcHBsX2J4IDwtIGJ4X25vZGVzICU+JSBmaWx0ZXIoTk9ERUlEICVpbiUgcGVyc29uc19ub2RlcykKCmJyb254IDwtIHJlYWQuY3N2KGZpbGUgPSAiTElPTl9icm9ueF9vbmx5LmNzdiIpCmRmIDwtIGJyb254WzE2OjE5XQoKc3Rfc2VnbWVudCA9IGZ1bmN0aW9uKHIpewogIHN0X2xpbmVzdHJpbmcodChtYXRyaXgodW5saXN0KHIpLCAyLCAyKSkpCn0KCgpicm9ueCRnZW9tIDwtIHN0X3NmYyhzYXBwbHkoMTpucm93KGRmKSwgCiAgICBmdW5jdGlvbihpKXtzdF9zZWdtZW50KGRmW2ksXSl9LHNpbXBsaWZ5PUZBTFNFKSkKCgpicm9ueCA8LSBzdF9zZihicm9ueCwgY3JzID0gIitpbml0PWVwc2c6NDMyNiArcHJvaj1sb25nbGF0ICtkYXR1bT1XR1M4NCArbm9fZGVmcyArZWxscHM9V0dTODQgK3Rvd2dzODQ9MCwwLDAiKQoKCiMjIExFQUZMRVQgUExPVCAKbGVhZmxldCgpICU+JSAKICBhZGRUaWxlcygpICU+JSAKICBhZGRDaXJjbGVNYXJrZXJzKAogICAgY29sb3IgPSAiYmx1ZSIsCiAgICByYWRpdXMgPSA0LAogICAgd2VpZ2h0ID0gNCwKICAgIGRhdGEgPSBwZWRfYngKICApICU+JQogIGFkZENpcmNsZU1hcmtlcnMoCiAgICByYWRpdXMgPSA0LAogICAgY29sb3IgPSAiYmxhY2siLAogICAgd2VpZ2h0ID0gNCwKICAgIGxhYmVsT3B0aW9ucyA9IGxhYmVsT3B0aW9ucyhub0hpZGUgPSBUUlVFLCB0ZXh0T25seSA9IFRSVUUpLAogICAgZGF0YSA9IHBwbF9ieAogICkKCgoKCmBgYAoKCg==</div>
 
 
 
